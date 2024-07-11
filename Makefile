@@ -11,9 +11,9 @@ hooks:
 	@poetry run pre-commit install
 	
 
-# test:
-# 	@echo "Running unit tests.."
-# 	@poetry run python -m pytest
+test:
+	@echo "Running unit tests.."
+	@poetry run python -m pytest
 
 lint:
 	@echo "Running lint tests.."
