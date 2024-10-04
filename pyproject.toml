@@ -31,10 +31,10 @@ docstring-code-format = true
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D100", "INP", "S603", "S607", "D104"]
+ignore = ["D104"]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**/*" = ["D", "S101"]
+"tests/**/*" = ["D", "S101", "ANN201", "PLR2004"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
