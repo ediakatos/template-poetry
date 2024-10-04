@@ -9,17 +9,32 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 
-
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^3.7.1"
-pymarkdownlnt = "^0.9.18"
-isort = "^5.13.2"
-pytest = "^8.2.2"
-tabulate = "^0.9.0"
-nbqa = "^1.8.5"
-black = "^24.4.2"
-flake8 = "^7.1.0"
+pre-commit = "^3.8.0"
+pymarkdownlnt = "^0.9.23"
+pytest = "^8.3.3"
+ruff = "^0.6.8"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+
+[tool.ruff]
+fix = true
+target-version = "py310"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D104"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = ["D", "S101", "ANN201", "PLR2004"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

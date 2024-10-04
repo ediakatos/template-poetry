@@ -13,7 +13,7 @@ hooks:
 
 test:
 	@echo "Running unit tests.."
-	@poetry run python -m pytest
+	@poetry run pytest
 
 lint:
 	@echo "Running lint tests.."
@@ -24,12 +24,12 @@ clean:
 	@rm -rf .venv
 	@poetry env remove --all
 
-
 help:
-	@echo "Available make targets:"
+	@echo "Available make commands for setup:"
 	@echo " make help           - Print help"
 	@echo " make .venv          - Install project dependencies"
 	@echo " make hooks          - Add pre-commit hooks"
 	@echo " make test           - Run unit tests"
 	@echo " make lint           - Run lint tests"
 	@echo " make clean          - Remove .venv"
+	@echo ""
